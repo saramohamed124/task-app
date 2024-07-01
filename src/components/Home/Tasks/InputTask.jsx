@@ -6,7 +6,7 @@ function InputTask() {
             <input
             type="text"
             placeholder="Add New Task"
-            className="input input-bordered input-sm w-full max-w-xs rounded-[20px]" />
+            className="input input-bordered input-md md:w-[461px] max-w-[100%] rounded-[30px]" />
         </div>
     );
 }

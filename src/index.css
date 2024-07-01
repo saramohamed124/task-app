@@ -5,6 +5,8 @@
   --main-yellow-color: #ffd60a;
   --main-yellow-hover-color: #ffc300;
   --main-darkblue-color: #003566;
+  --main-darkblue-hover-color: #001d3d;
+  --text-gray-color: #d9d9d9;
 }
 body {
   margin: 0;
