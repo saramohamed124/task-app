@@ -4,7 +4,7 @@ import FormSignup from '../components/Signup/FormSignup';
 
 function Signup() {
     return (
-        <div className=' h-screen flex justify-between'>
+        <div className='flex justify-between sm:flex-row flex-col-reverse'>
             <FormSignup/>
             <ContentSide/>
         </div>

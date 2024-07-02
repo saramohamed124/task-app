@@ -3,3 +3,10 @@
   font-weight: 400;
   font-style: normal;
 }
+
+.shape {
+  position: absolute;
+  left: 27%;
+  transform: translateX(50%);
+  z-index: -1;
+}
