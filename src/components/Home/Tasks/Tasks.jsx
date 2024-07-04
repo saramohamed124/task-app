@@ -1,7 +1,5 @@
 import React from 'react';
-import Filter from './Filter';
 import AddBtn from './AddBtn';
-import ListTasks from './ListTasks';
 
 function Tasks() {
     return (

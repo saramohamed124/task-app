@@ -7,21 +7,22 @@ function AddBtn() {
     const [task, setTask] = useState("");
     const [tasks, setTasks] = useState([]);
 
-    useEffect(() => {
-        // Load tasks from localStorage on component mount
-        const storedTasks = window.localStorage.getItem('Tasks');
-        if (storedTasks) {
-            setTasks(JSON.parse(storedTasks)); // Take all Tasks in Stored Task (Tasks value in local Storage) and Add it in SetTasks 
-        }
-    },[task]);
+   // Get Data From  Local Storage And update in IN Data
+   useEffect(() => {
+    const storedTasks = JSON.parse(localStorage.getItem('Tasks'));
+    if (storedTasks) {
+        setTasks(storedTasks);
+    }
+},[task]);
 
     const handleAddTask = () => {
         if (window.localStorage.getItem('User')) {
             if (task.trim().length >= 2) {
-            const newTasks = [...tasks, task];
-            setTasks(newTasks);
-            window.localStorage.setItem('Tasks', JSON.stringify(newTasks));
-            setTask(''); // Clear input after adding
+                const newTask = { task: task}; // Ensure the task object has a `completed` property
+                const newTasks = [...tasks, newTask];
+                setTasks(newTasks);
+                window.localStorage.setItem('Tasks', JSON.stringify(newTasks));
+                setTask(""); // Clear input after adding
             }
         } else {
             window.location.pathname = '/signup';
@@ -30,19 +31,19 @@ function AddBtn() {
 
     return (
         <div>
-             <div className='flex gap-5 flex-wrap justify-center items-center my-5'>
-            <InputTask task={task} setTask={setTask} />
-            <div className='flex justify-center gap-5 flex-wrap'>
-                <button 
-                    onClick={handleAddTask} 
-                    className='btn bg-[--main-darkblue-color] text-white font-light hover:bg-[--main-darkblue-hover-color]'
-                >
-                    Add New Task
-                </button>
-                <Filter/>
+            <div className='flex gap-5 flex-wrap justify-center items-center my-5'>
+                <InputTask task={task} setTask={setTask} />
+                <div className='flex justify-center gap-5 flex-wrap'>
+                    <button 
+                        onClick={handleAddTask} 
+                        className='btn bg-[--main-darkblue-color] text-white font-light hover:bg-[--main-darkblue-hover-color]'
+                    >
+                        Add New Task
+                    </button>
+                    <Filter task={tasks} /> {/* Pass the tasks array to Filter */}
+                </div>
             </div>
-        </div>
-        <ListTasks value={task}/>
+            <ListTasks value={tasks} /> {/* Ensure ListTasks receives the tasks array */}
         </div>
     );
 }
