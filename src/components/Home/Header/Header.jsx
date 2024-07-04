@@ -1,4 +1,4 @@
-import header_img from '../assets/imgs/Task-header_img.gif'
+import header_img from './assets/imgs/Task-header_img.gif'
 import Content from './Content'
 function Header(){
     return(

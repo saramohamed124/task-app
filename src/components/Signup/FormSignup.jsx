@@ -13,12 +13,9 @@ function FormSignup() {
         setAccept(true)
         const data = {name:name,email:email,password:password,passwordRepeat:passwordRepeat}
         if(!(name === '' || password.length < 8 || passwordRepeat !== password)){
-            window.localStorage.setItem("name",data.name)
-            window.localStorage.setItem("email",data.email)
-            window.localStorage.setItem("password",data.password)
-            window.localStorage.setItem("Repeat password",data.passwordRepeat)
+            window.localStorage.setItem("User",JSON.stringify(data))
+            window.location.pathname = '/'
         }
-        window.location.pathname = '/'
     }
     return (
         <div className='bg-[--main-darkblue-color] p-5 m-0 flex-1 flex-col'>

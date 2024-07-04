@@ -7,9 +7,9 @@ export default function Navbar(){
         <div>
           <Link className="text-xl md:text-2xl text-white" to={'/'}>Task Management</Link>
         </div>
-        {!window.localStorage.getItem('email')
+        {!window.localStorage.getItem('User')
         ?<div>
-          <Link className="btn bg-[--main-yellow-color] text-[15px] border-none w-[150px] h-[50px] hover:bg-[--main-yellow-hover-color] font-bold " to={'/signup'}>sign up</Link>
+          <Link className="btn w-auto h-[50px] py-1 px-10 bg-[--main-yellow-color] text-[15px] border-none  hover:bg-[--main-yellow-hover-color] font-bold " to={'/signup'}>sign up</Link>
         </div>
         :
         <div>

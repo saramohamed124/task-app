@@ -2,12 +2,7 @@ import React from "react";
 
 const Logout = () => {
     const handleLogout = () =>{
-        if(window.localStorage.getItem("email")){
-            window.localStorage.removeItem("name")
-            window.localStorage.removeItem("email")
-            window.localStorage.removeItem("password")
-            window.localStorage.removeItem("Repeat password")
-        }
+            window.localStorage.removeItem("User")
         window.location.pathname = '/signup'
     }
     return (
