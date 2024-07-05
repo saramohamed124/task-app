@@ -3,15 +3,19 @@ import './App.css';
 import Home from './Pages/Home';
 import Signup from './Pages/Signup';
 import Navbar from './Pages/Navbar';
+import TodoProvider from './context/TodoProvider';
 
 function App() {
   return (
     <div>
-    <Navbar/>
+      <TodoProvider>
+        <Navbar/>
     <Routes>
       <Route element={<Home/>} path='/'></Route>
       <Route element={<Signup/>} path='/signup'></Route>
     </Routes>
+   </TodoProvider>
+    
     </div>
   );
 }

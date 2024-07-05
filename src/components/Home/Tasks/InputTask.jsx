@@ -9,7 +9,7 @@ function InputTask({task,setTask}) {
             value={task}
             onChange={(e) => setTask(e.target.value)}
             className="input input-bordered input-md md:w-[461px] max-w-[100%] rounded-[30px]" />
-            {task.trim().length < 2 && <p className='text-red-600'>Write a task</p>}
+            {task.trim().length <= 2 && <p className='text-red-600'>Write a task</p>}
         </div>
     );
 }
