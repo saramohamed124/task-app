@@ -60,10 +60,9 @@ function TodoProvider({children}) {
         setTodo(newTasks)
         localStorage.setItem('Tasks', JSON.stringify(newTasks));
     }
-    const tasks = todos.filter((task) => {
-      if (filter === 'compeleted') return task.compeleted;
-      if (filter === 'all') return true;
-  })
+    const tasks = todos.filter((task) => (
+      (filter === 'compeleted') ? task.compeleted : true
+        ))
     return (
         <TaskContextApp.Provider value={{
           tasks:tasks,
