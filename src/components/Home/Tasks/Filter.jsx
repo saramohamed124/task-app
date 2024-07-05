@@ -5,8 +5,10 @@ import { useTasks } from '../../../context/TodoProvider';
 function Filter() {
     const { setFilter } = useTasks();
 
+    // Handle Filter Compeleted Tasks
     const toggleFilter = () => {
-        setFilter((prevFilter) => (prevFilter === 'all' ? 'compeleted' : 'all'));
+        // update filter based on prevFilter
+        setFilter((prevFilter) => (prevFilter === 'all' ? 'compeleted' : 'all'));  // if all make it compeleted  other wise make it all (toggle it)
     };
 
     return (

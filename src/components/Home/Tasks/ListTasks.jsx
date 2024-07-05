@@ -20,16 +20,19 @@ function ListTasks() {
     return (
         <div className='text-center w-full'>
             <ul className='bg-[--main-darkblue-hover-color] p-4 rounded-[12px] flex flex-col gap-y-6 justify-center w-full'>
+                {/* If Length of Tasks equals to 1 or more than 1 And User Signed Up (data of user existed) */}
                 {tasks.length >= 1 && window.localStorage.getItem('User')  ? (
                     <>
                         {tasks.map((task)  => (
                             <li key={task.id} className={`bg-[--text-gray-color] p-4 rounded-[12px] flex justify-between items-center `}>
+                                {/* if Id in Edit Task equal to Task Id */}
                                 {editTask === task.id ? (
                                     <input type='text'
                                     value={currentTask}
                                     onChange={(e)=> setCurrentTask(e.target.value)}
                                     />
                                 ):(
+                                    // if Task Compeleted put className of line-througth
                                 <p className={`${task.compeleted ? "line-through": ""}`}>{task.name}</p>
                                 )}
                                 <div className='icons flex justify-between items-center gap-5'>
@@ -40,6 +43,7 @@ function ListTasks() {
                                         alt='compeleted icon'
                                         onClick={()=> handleCompeleted(task.id)}
                                         />
+                                {/* if Id in Edit Task equal to Task Id */}
                                     {editTask === task.id ? (
                                         <button onClick={() => handleSaveTask(task.id)} style={{ textDecoration: "none" }}>Save</button>
                                     ) : (
