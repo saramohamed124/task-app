@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import InputTask from './InputTask';
 import ListTasks from './ListTasks';
-import Filter from './Filter';
 
 function AddBtn() {
     const [task, setTask] = useState("");
@@ -40,7 +39,6 @@ function AddBtn() {
                     >
                         Add New Task
                     </button>
-                    <Filter task={tasks} /> {/* Pass the tasks array to Filter */}
                 </div>
             </div>
             <ListTasks value={tasks} /> {/* Ensure ListTasks receives the tasks array */}

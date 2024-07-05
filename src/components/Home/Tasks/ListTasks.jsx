@@ -1,8 +1,9 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import compeleted_icon from './assets/icons/task_compeleted.svg';
 import edit_icon from './assets/icons/edit_icon.svg';
 import delete_icon from './assets/icons/delete_icon.svg';
 import empty_img from './assets/imgs/empty_img.png';
+import Filter from './Filter';
 
 function ListTasks(props) {
     const [data, setData] = useState(props.value);
@@ -54,6 +55,7 @@ function ListTasks(props) {
     }
     return (
         <div className='text-center'>
+            <Filter task={data} setTasks={setData} /> {/* Pass the tasks array to Filter */}
             <ul className='bg-[--main-darkblue-hover-color] p-4 rounded-[12px] flex flex-col gap-y-6 justify-center'>
                 
                 {data.length >= 1 && window.localStorage.getItem('User')  ? (
