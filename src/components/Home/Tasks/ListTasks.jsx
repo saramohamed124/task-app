@@ -56,7 +56,7 @@ function ListTasks(props) {
     return (
         <div className='text-center'>
             <Filter task={data} setTasks={setData} /> {/* Pass the tasks array to Filter */}
-            <ul className='bg-[--main-darkblue-hover-color] p-4 rounded-[12px] flex flex-col gap-y-6 justify-center'>
+            <ul className='bg-[--main-darkblue-hover-color] p-4 rounded-[12px] flex flex-col gap-y-6 justify-center w-full'>
                 
                 {data.length >= 1 && window.localStorage.getItem('User')  ? (
                     <>

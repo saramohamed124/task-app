@@ -18,7 +18,7 @@ function Filter(props) {
         const completedTasks = data.filter(task => task.compeleted )
         SetUpdateFilter(pre => pre + 1)
         if(enableFilter && completedTasks){
-            props.setTasks(completedTasks)
+            props.setTasks(completedTasks ? completedTasks : data)
             setEnableFilter(!enableFilter)
         }else{
             props.setTasks(data)
